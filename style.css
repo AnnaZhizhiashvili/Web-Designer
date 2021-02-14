@@ -24,7 +24,7 @@ canvas {
   height: 100%;
   background: url(img/bluenight.jpg);
   background-size: cover;
-  z-index: -10; }
+  /* z-index: -10;*/ }
 
 /*utility classes*/
 .flex {
@@ -94,12 +94,14 @@ img {
       text-transform: uppercase;
       margin-bottom: 32px;
       position: relative;
-      justify-content: space-between; }
+      justify-content: space-between;
+      transition: all 1s ease-out; }
       .about .skills-box div div {
         margin-bottom: 0; }
         .about .skills-box div div span:nth-child(2) {
           margin-right: 53px; }
 
+/*width increasing styles*/
 .starting-width {
   position: absolute;
   left: 0;
@@ -108,8 +110,7 @@ img {
   margin-top: 12px;
   background: black;
   width: 10%;
-  border-radius: 10%;
-  transition: all 1s ease-out; }
+  border-radius: 10%; }
 
 .width1 {
   width: 86%; }
@@ -125,5 +126,84 @@ img {
 
 .link-active {
   font-weight: bold; }
+
+/**/
+/*resume section*/
+.resume {
+  background-color: lightgrey;
+  /*  height: 70%;*/ }
+  .resume__main {
+    flex-direction: column;
+    text-align: center;
+    padding: 84px 177px; }
+  .resume__containers {
+    transform: perspective(100000px);
+    margin-top: 20px; }
+    .resume__containers div {
+      /*   background-color: pink;*/
+      padding: 30px; }
+    .resume__containers div:not(:last-child) {
+      margin-right: 20px; }
+    .resume__containers div > *:not(:last-child) {
+      margin-bottom: 20px; }
+
+.swing {
+  animation: skew 1.7s ease-out;
+  animation-delay: .1s; }
+
+@keyframes skew {
+  0% {
+    transform: skewX(2deg); }
+  14% {
+    transform: skewX(-20deg); }
+  28% {
+    transform: skewX(20deg); }
+  43% {
+    transform: skewX(-10deg); }
+  57% {
+    transform: skewX(10deg); }
+  73% {
+    transform: skewX(-5deg); }
+  86% {
+    transform: skewX(5deg); }
+  100% {
+    transform: skewX(0deg); } }
+#swing {
+  position: relative;
+  transition: all .3s ease;
+  padding: 71px; }
+
+#swing:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  bottom: 20px;
+  left: 8px;
+  right: 8px;
+  top: 20px;
+  /*  background: #777;*/
+  -webkit-box-shadow: 0 0 30px 10px #486685;
+  -moz-box-shadow: 0 0 30px 10px #486685;
+  box-shadow: 0 0 30px 10px #486685;
+  border-radius: 10px/40px; }
+
+#swing:after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  bottom: 14px;
+  left: 30px;
+  right: 30px;
+  top: 14px;
+  /*  background: #777;*/
+  -webkit-box-shadow: 0 0 30px 17px #486685;
+  -moz-box-shadow: 0 0 30px 17px #486685;
+  box-shadow: 0 0 30px 17px #486685;
+  border-radius: 100px/10px; }
+
+#swing:hover {
+  transform: scale(1.1); }
+
+/**/
 
 /*# sourceMappingURL=style.css.map */
