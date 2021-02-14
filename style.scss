@@ -10,7 +10,7 @@ html {
 
 
 body {
-  line-height: 1.3;
+  line-height: 1.5;
   height: 100%;
   color: white;
   font-weight: 100;
@@ -57,9 +57,13 @@ a, a:visited, a:hover {
   color: inherit;
 }
 
+ img {
+      width: 100%;
+}
+
+
 
 .header {
-  background-color: red;
   position: fixed;
   top: 0;
   right: 0;
@@ -70,36 +74,98 @@ a, a:visited, a:hover {
 
   }
   .navigation {
-
-    ul {
-
-    }
+      display: flex;
+      align-items: center;
     li {
       list-style-type: none;
       margin-right: 13px;
-    }
-
-    
-   
+      font-size: 19px;
+    } 
   }
 }
 
-section {
-
-
+/*section {
   height: 50%;
   width: 100%;
-  background-color: black;
-  opacity: 50%;
-/*  position: relative;*/
-  top: 70%;
+}*/
 
-  
+.home {
+    height: 100%;
+    width: 100%;
+    .name {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        text-align: center;
+          h1{
+            font-size: 40px;
+            margin-bottom: 30px;
+          }
+        }
+    }
+
+.about {
+    text-align: center;
+    background-color: grey;
+    padding: 90px 225px;
+
+    &__container {
+      margin-top: 40px;
+      
+
+        .img-box {
+          margin-right: 27px;
+
+        }
+         .text-box {
+          text-align: start;
+         }
+
+      }
+
+
+        .skills-box {
+          flex-wrap: wrap;
+          margin-top: 70px;
+
+            div {
+              flex-basis: 45%;
+              text-transform: uppercase;
+              margin-bottom: 30px;
+              position: relative;
+
+              .width{
+                 position: absolute;
+                left: 0;
+                transition: all .5s ease;
+              
+             /*   width: 10%;*/
+                height: 28%;
+                margin-top: 12px;
+                background: black;
+              }
+            }
+         }
 }
 
-#home {
-  margin-top: 81px;
-  padding-top: 200px;
- 
-  
+
+.width1 {
+  width: 86%;
+
+
+}
+
+.width2 {
+  width: 45%;
+}
+
+.width3 {
+  width: 65%;
+}
+.width4 {
+  width: 79%;
+}
+.link-active {
+  font-size: 30px;
 }
