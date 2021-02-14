@@ -56,6 +56,8 @@ img {
       list-style-type: none;
       margin-right: 13px;
       font-size: 19px; }
+    .header .navigation a {
+      transition: all .5s ease; }
 
 /*section {
   height: 50%;
@@ -90,16 +92,24 @@ img {
     .about .skills-box div {
       flex-basis: 45%;
       text-transform: uppercase;
-      margin-bottom: 30px;
-      position: relative; }
-      .about .skills-box div .width {
-        position: absolute;
-        left: 0;
-        transition: all .5s ease;
-        /*   width: 10%;*/
-        height: 28%;
-        margin-top: 12px;
-        background: black; }
+      margin-bottom: 32px;
+      position: relative;
+      justify-content: space-between; }
+      .about .skills-box div div {
+        margin-bottom: 0; }
+        .about .skills-box div div span:nth-child(2) {
+          margin-right: 53px; }
+
+.starting-width {
+  position: absolute;
+  left: 0;
+  transition: all .5s ease;
+  height: 28%;
+  margin-top: 12px;
+  background: black;
+  width: 10%;
+  border-radius: 10%;
+  transition: all 1s ease-out; }
 
 .width1 {
   width: 86%; }
@@ -114,6 +124,6 @@ img {
   width: 79%; }
 
 .link-active {
-  font-size: 30px; }
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

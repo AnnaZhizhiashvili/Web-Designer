@@ -80,7 +80,12 @@ a, a:visited, a:hover {
       list-style-type: none;
       margin-right: 13px;
       font-size: 19px;
+  
     } 
+     a {
+      
+      transition: all .5s ease;
+     }
   }
 }
 
@@ -132,23 +137,32 @@ a, a:visited, a:hover {
             div {
               flex-basis: 45%;
               text-transform: uppercase;
-              margin-bottom: 30px;
+              margin-bottom: 32px;
               position: relative;
+              justify-content: space-between;
+                div {
+                  margin-bottom: 0;
+                   span:nth-child(2) {
+                    margin-right: 53px;
+                   }
 
-              .width{
-                 position: absolute;
-                left: 0;
-                transition: all .5s ease;
-              
-             /*   width: 10%;*/
-                height: 28%;
-                margin-top: 12px;
-                background: black;
-              }
+                }
+        
             }
-         }
+      }
 }
 
+ .starting-width{
+        position: absolute;
+        left: 0;
+        transition: all .5s ease;
+        height: 28%;
+        margin-top: 12px;
+        background: black;
+        width: 10%;
+        border-radius: 10%;
+        transition: all 1s ease-out;
+}
 
 .width1 {
   width: 86%;
@@ -167,5 +181,6 @@ a, a:visited, a:hover {
   width: 79%;
 }
 .link-active {
-  font-size: 30px;
+  font-weight: bold;
+
 }
