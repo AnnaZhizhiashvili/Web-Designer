@@ -199,8 +199,7 @@ img {
   height: 35%;
   margin-top: 12px;
   background: #6f0111;
-  width: 10%;
-  border-radius: 10%; }
+  width: 10%; }
 
 .width1 {
   width: 86%; }
@@ -369,7 +368,8 @@ img {
   z-index: -10;
   opacity: .8;
   background-color: #6f0111;
-  transition: all 1s ease; }
+  transition: all 1s ease;
+  border-radius: 10px; }
 
 .blog__container {
   transition: all 1s ease; }

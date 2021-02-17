@@ -26,7 +26,22 @@ let sectionOptions = {
 // headerObserver.observe(home);
 
 document.addEventListener('scroll', function(e) {
-  		header.classList.add("header-scroll");
+	if (window.pageYOffset > 200) {
+			header.classList.add("header-scroll");
+	}	else {
+		header.classList.remove("header-scroll");
+	}
+});
+
+window.addEventListener('load', function(e) {
+	console.log("load");
+	if (window.pageYOffset > 200) {
+			header.classList.add("header-scroll");
+	}	else {
+		header.classList.remove("header-scroll");
+	}
+
+ 	
 
   });
 
