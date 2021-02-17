@@ -53,12 +53,14 @@ img {
   right: 0;
   width: 100%;
   padding: 13px 10px;
-  z-index: 1000; }
+  z-index: 1000;
+  transition: all .4s ease;
+  padding: 12px 18px; }
   .header__logo {
     width: 60px;
     height: 65px;
-    background: white;
-    opacity: .7; }
+    background: #fff;
+    /*    opacity: .7;*/ }
     .header__logo img {
       height: 100%; }
   .header .navigation {
@@ -87,7 +89,7 @@ img {
       transition: all .3s ease; }
 
 .header-scroll {
-  background-color: black; }
+  background: #A88895; }
 
 /*hamburger menu*/
 .nav-hamburger {
@@ -163,10 +165,10 @@ img {
 
 .about {
   text-align: center;
-  background: #72334D;
-  background: -webkit-linear-gradient(bottom right, #72334D, #27132C);
-  background: -moz-linear-gradient(bottom right, #72334D, #27132C);
-  background: linear-gradient(to top left, #72334D, #27132C);
+  background: #60233C;
+  background: -webkit-linear-gradient(bottom right, #60233C, #000000);
+  background: -moz-linear-gradient(bottom right, #60233C, #000000);
+  background: linear-gradient(to top left, #60233C, #000000);
   padding: 90px 225px; }
   .about__container {
     margin-top: 40px; }
@@ -218,7 +220,7 @@ img {
 /**/
 /*resume and blog sections/ sections that fade in*/
 .resume {
-  color: #411E2C;
+  color: #2E1620;
   position: relative; }
   .resume__main {
     flex-direction: column;
@@ -238,12 +240,12 @@ img {
 .blog {
   text-align: center;
   color: black;
+  color: #2E1620;
   padding: 90px 225px; }
   .blog__main {
     flex-direction: column; }
   .blog h2 {
-    margin-bottom: 40px;
-    opacity: 0; }
+    margin-bottom: 40px; }
   .blog__container {
     margin-right: 40px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -315,10 +317,10 @@ img {
     transform: rotate(-3deg); } }
 /* portfolio */
 .portfolio {
-  background: #72334D;
-  background: -webkit-linear-gradient(bottom right, #72334D, #27132C);
-  background: -moz-linear-gradient(bottom right, #72334D, #27132C);
-  background: linear-gradient(to top left, #72334D, #27132C);
+  background: #60233C;
+  background: -webkit-linear-gradient(bottom right, #60233C, #000000);
+  background: -moz-linear-gradient(bottom right, #60233C, #000000);
+  background: linear-gradient(to top left, #60233C, #000000);
   padding: 80px; }
 
 #filters {
@@ -399,44 +401,35 @@ img {
     opacity: 1; } }
 /*footer*/
 .footer {
-  background-color: #333;
-  padding: 117px 12px 34px 12px;
+  background: #60233C;
+  background: -webkit-linear-gradient(bottom right, #60233C, #000000);
+  background: -moz-linear-gradient(bottom right, #60233C, #000000);
+  background: linear-gradient(to top left, #60233C, #000000);
+  padding: 82px 12px 34px 12px;
   font-size: 16px;
   color: #f7f7f7; }
   .footer__box {
     height: 100%; }
     .footer__box .social-box {
-      font-size: 30px;
-      margin-bottom: 26px;
-      /*    margin-left: 29px;*/
+      font-size: 24px;
+      margin-bottom: 32px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center; }
       .footer__box .social-box a {
         position: relative;
-        transition: all .3s; }
+        transition: all .3s;
+        width: 51px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #fff;
+        border-radius: 50%; }
         .footer__box .social-box a:hover {
           opacity: .6; }
         .footer__box .social-box a:not(:last-child) {
-          margin-right: 40px; }
-        .footer__box .social-box a::after {
-          content: "";
-          width: 51px;
-          height: 51px;
-          position: absolute;
-          left: -43%;
-          top: -10%;
-          border: 1px solid white;
-          border-radius: 50%; }
-      .footer__box .social-box .facebook::after {
-        content: "";
-        width: 51px;
-        height: 51px;
-        position: absolute;
-        left: -88%;
-        top: -6%;
-        border: 1px solid white;
-        border-radius: 50%; }
+          margin-right: 14px; }
     .footer__box1 {
       border-top: 1px solid #777;
       padding-top: 8px; }

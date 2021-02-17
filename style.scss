@@ -73,12 +73,14 @@ a, a:visited, a:hover {
   width: 100%;
   padding: 13px 10px;
   z-index: 1000;
+  transition: all .4s ease;
+  padding: 12px 18px;
 
   &__logo {
     width: 60px;
     height: 65px;
-    background: white;
-    opacity: .7;
+    background: #fff;
+/*    opacity: .7;*/
     img {
       height: 100%;
     }
@@ -123,7 +125,9 @@ a, a:visited, a:hover {
 }
 
 .header-scroll {
-  background-color: black;
+background: #A88895;
+
+
 }
 
 /*hamburger menu*/
@@ -172,7 +176,7 @@ a, a:visited, a:hover {
   }
 
   .header {
-    
+     
          .nav-hamburger {
           display: flex;
           align-self: flex-start;
@@ -236,10 +240,10 @@ a, a:visited, a:hover {
 
 .about {
     text-align: center;
-   background: #72334D;
-background: -webkit-linear-gradient(bottom right, #72334D, #27132C);
-background: -moz-linear-gradient(bottom right, #72334D, #27132C);
-background: linear-gradient(to top left, #72334D, #27132C);
+   background: #60233C;
+background: -webkit-linear-gradient(bottom right, #60233C, #000000);
+background: -moz-linear-gradient(bottom right, #60233C, #000000);
+background: linear-gradient(to top left, #60233C, #000000);
     padding: 90px 225px;
 
     &__container {
@@ -320,7 +324,7 @@ background: linear-gradient(to top left, #72334D, #27132C);
 /*resume and blog sections/ sections that fade in*/
 
 .resume {
-  color: #411E2C;
+  color: #2E1620;
   position: relative;
 
 
@@ -357,13 +361,13 @@ background: linear-gradient(to top left, #72334D, #27132C);
 .blog {
     text-align: center;
     color: black;
+    color: #2E1620;
     padding: 90px 225px;
       &__main {
         flex-direction: column;
       }
       h2 {
         margin-bottom: 40px;
-        opacity: 0;
 
       }
       &__container {
@@ -450,10 +454,10 @@ background: linear-gradient(to top left, #72334D, #27132C);
 /* portfolio */
 
 .portfolio {
-  background: #72334D;
-  background: -webkit-linear-gradient(bottom right, #72334D, #27132C);
-  background: -moz-linear-gradient(bottom right, #72334D, #27132C);
-  background: linear-gradient(to top left, #72334D, #27132C);
+  background: #60233C;
+background: -webkit-linear-gradient(bottom right, #60233C, #000000);
+background: -moz-linear-gradient(bottom right, #60233C, #000000);
+background: linear-gradient(to top left, #60233C, #000000);
   padding: 80px;
 
 }
@@ -572,8 +576,11 @@ background: linear-gradient(to top left, #72334D, #27132C);
 
 .footer {
 
-    background-color: #333;
-   padding: 117px 12px 34px 12px;
+    background: #60233C;
+background: -webkit-linear-gradient(bottom right, #60233C, #000000);
+background: -moz-linear-gradient(bottom right, #60233C, #000000);
+background: linear-gradient(to top left, #60233C, #000000);
+   padding: 82px 12px 34px 12px;
     font-size: 16px;
     color: #f7f7f7;
 
@@ -581,16 +588,22 @@ background: linear-gradient(to top left, #72334D, #27132C);
         height: 100%;
 
         .social-box {
-          font-size: 30px;
-          margin-bottom: 26px;
-        /*    margin-left: 29px;*/
+          font-size: 24px;
+          margin-bottom: 32px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
 
           a {
             position: relative;
             transition: all .3s;
+            width: 51px;
+            height: 51px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+            border-radius: 50%;
 
           
             &:hover {
@@ -598,36 +611,8 @@ background: linear-gradient(to top left, #72334D, #27132C);
             }
 
             &:not(:last-child){
-              margin-right: 40px;
+              margin-right: 14px;
             }
-
-             &::after {
-            content: "";
-            width: 51px;
-            height: 51px;
-            position: absolute;
-            left: -43%;
-            top: -10%;
-            border: 1px solid white;
-            border-radius: 50%;
-      
-
-
-            }
-
-          }
-          .facebook::after {
-           content: "";
-            width: 51px;
-            height: 51px;
-            position: absolute;
-            left: -88%;
-            top: -6%;
-            border: 1px solid white;
-            border-radius: 50%;
-
-
-
           }
 
 
