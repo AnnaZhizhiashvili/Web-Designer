@@ -496,4 +496,7 @@ img {
   left: unset;
   right: 1%; }
 
+.about, .resume, .portfolio, .blog {
+  padding-top: 100px; }
+
 /*# sourceMappingURL=style.css.map */
