@@ -79,7 +79,8 @@ a, a:visited, a:hover {
   &__logo {
     width: 60px;
     height: 65px;
-    background: #fff;
+    background: transparent;
+    filter: brightness(0) invert(1);
 /*    opacity: .7;*/
    
   }
@@ -124,7 +125,7 @@ a, a:visited, a:hover {
 }
 
 .header-scroll {
-background: #A88895;
+    background: rgba(0, 0, 0, 0.9);
 
 
 }
@@ -239,11 +240,12 @@ background: #A88895;
 
 .about {
     text-align: center;
-   background: #60233C;
-background: -webkit-linear-gradient(bottom right, #60233C, #000000);
-background: -moz-linear-gradient(bottom right, #60233C, #000000);
-background: linear-gradient(to top left, #60233C, #000000);
+ background: #FFFFFF;
+background: -webkit-linear-gradient(bottom left, #FFFFFF, #B8B6B4);
+background: -moz-linear-gradient(bottom left, #FFFFFF, #B8B6B4);
+background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
     padding: 90px 225px;
+    color: #000;
 
     &__container {
       margin-top: 40px;
@@ -292,7 +294,7 @@ background: linear-gradient(to top left, #60233C, #000000);
         transition: all .5s ease;
         height: 28%;
         margin-top: 12px;
-        background: #FAEAEA;
+        background: #290943;
         width: 10%;
         border-radius: 10%;
        
@@ -319,7 +321,7 @@ background: linear-gradient(to top left, #60233C, #000000);
 .link-active {
  
    
-    color: #f1c6e3;
+    opacity: .6;
   }
 
 /**/
@@ -402,7 +404,7 @@ background: linear-gradient(to top left, #60233C, #000000);
   position: relative;
   transition: all .3s ease-out;
    animation-fill-mode: forwards;  
-  padding: 71px;
+  padding: 44px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -457,12 +459,11 @@ background: linear-gradient(to top left, #60233C, #000000);
 /* portfolio */
 
 .portfolio {
-  background: #60233C;
-background: -webkit-linear-gradient(bottom right, #60233C, #000000);
-background: -moz-linear-gradient(bottom right, #60233C, #000000);
-background: linear-gradient(to top left, #60233C, #000000);
-  padding: 80px;
-
+  color: #000;
+background: #FFFFFF;
+background: -webkit-linear-gradient(bottom left, #FFFFFF, #B8B6B4);
+background: -moz-linear-gradient(bottom left, #FFFFFF, #B8B6B4);
+background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
 }
 
 
@@ -479,16 +480,18 @@ background: linear-gradient(to top left, #60233C, #000000);
     border: 5px solid #fff;
     padding: 7px 12px;
     transition: all .4s ease;
+    outline: none;
     &:hover {
       background: #fff;
-      color: #72334D;
+      color: #000;
       cursor: pointer;
+      transform: scale(.95);
     }
   }
 }
 
 #grid {
-    max-width: 63%;
+    max-width: 100%;
     min-height: 582px;
     margin: 0 auto;
   img {
@@ -520,7 +523,7 @@ background: linear-gradient(to top left, #60233C, #000000);
   width: 100%;
   z-index: -10;
   opacity: .8;
-  background-color: #72334D;
+  background-color: #290943;
   transition: all 1s ease;
  
 
@@ -579,22 +582,20 @@ background: linear-gradient(to top left, #60233C, #000000);
 
 .footer {
 
-    background: #60233C;
-background: -webkit-linear-gradient(bottom right, #60233C, #000000);
-background: -moz-linear-gradient(bottom right, #60233C, #000000);
-background: linear-gradient(to top left, #60233C, #000000);
-   padding: 82px 33px 34px 33px;
+    background: #000;
+
     font-size: 16px;
     color: #f7f7f7;
 
       &__box {
         height: 100%;
 
+
         .social-box {
           font-size: 24px;
           margin-bottom: 32px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
 
           a {
@@ -633,7 +634,7 @@ background: linear-gradient(to top left, #60233C, #000000);
           transition: all .3s ease;
           position: relative;
 
-          &::after {
+         /* &::after {
 
             content: "";
             position: absolute;
@@ -642,8 +643,8 @@ background: linear-gradient(to top left, #60233C, #000000);
             background-color: #fff;
             width: 100%;
             height: 1px;
-           /* transition: all .3s ease-out;*/
-          }
+         
+          }*/
 
           &:hover {
             opacity: .6;
@@ -665,6 +666,11 @@ background: linear-gradient(to top left, #60233C, #000000);
      }
 }
 
+.footer__box1 {
+   padding-top: 0;
+   border: 0;
+}
+
 @keyframes forPseudo{
   from {
     width: 100%;
@@ -679,18 +685,19 @@ background: linear-gradient(to top left, #60233C, #000000);
 
 .audio {
     position: fixed;
-    top: 24%;
-    left: 7%;
+    bottom: 12%;
+    left: 3%;
     transform: translateX(-50%);
-    width: 161px;
-    height: 22px;
-    color: #F7EEEE;
+    width: 71px;
+    height: 14px;
+    color: #fff;
     z-index: 100;
     display: flex;
     align-items: center;
-    padding: 29px 23px 23px 23px;
-    background: #F7EEEE;
+    padding: 17px 15px;
+    background: #fff;
     border-radius: 8px;
+
 
    
   .audio-box {

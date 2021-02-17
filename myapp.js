@@ -8,19 +8,27 @@ let sectionOptions = {
 	threshold: .75
 };
 
-let headerOptions = {};
+// let headerOptions = {
+// 	rootMargin: "0px 0px -1000px 0px",
 
-const headerObserver = new IntersectionObserver(function(entries) {
-	entries.forEach(entry => {
-		console.log(entry);
-		if (!entry.isIntersecting) {
-			header.classList.add("header-scroll");
-		} else {
-			header.classList.remove("header-scroll");
-		}
-	}), headerOptions
-});
-headerObserver.observe(home);
+// };
+
+// const headerObserver = new IntersectionObserver(function(entries) {
+// 	entries.forEach(entry => {
+// 		console.log(entry);
+// 		if (!entry.isIntersecting) {
+// 			header.classList.add("header-scroll");
+// 		} else {
+// 			header.classList.remove("header-scroll");
+// 		}
+// 	}), headerOptions
+// });
+// headerObserver.observe(home);
+
+document.addEventListener('scroll', function(e) {
+  		header.classList.add("header-scroll");
+
+  });
 
 
 
