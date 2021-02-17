@@ -41,7 +41,7 @@ const sectionObserver = new IntersectionObserver(function(entries) {
 			// entry.target.classList.add("active");
 			
 			element.classList.add("link-active");
-			console.log(element);
+			
 			
 		} else {
 			// entry.target.classList.remove("active");
@@ -165,14 +165,23 @@ links.forEach(link => link.addEventListener("click", ()=> {
 }));
 
 
-// scrolling text
+//observe audio
+const portfolio = document.querySelector('.portfolio');
+const audio = document.querySelector('.audio');
+let porfolioOptions = {
+	threshold: .1
+}
 
-// const scrollingText = document.querySelector(".name");
+const portfolioObserver = new IntersectionObserver(function(entries) {
+		 entries.forEach(entry => {
+	 	if (entry.isIntersecting) {
+			audio.classList.add("audioPosition");
+			
+		} else {
+			 audio.classList.remove("audioPosition");
+		};
+	})
+}, porfolioOptions
+);
 
-
-// document.addEventListener('scroll', function(e) {
-// 	let windowsY = window.scrollY;
-// 	scrollingText.style.top = `${434 - 20}px`;
-// 	// console.log(windowsY);
-// 	console.log(scrollingText.getBoundingClientRect().top);
-// })			
+portfolioObserver.observe(portfolio);
