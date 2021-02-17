@@ -81,13 +81,12 @@ a, a:visited, a:hover {
     height: 65px;
     background: #fff;
 /*    opacity: .7;*/
-    img {
-      height: 100%;
-    }
+   
   }
   .navigation {
       display: flex;
       align-items: center;
+
     li {
       list-style-type: none;
       margin-right: 13px;
@@ -315,9 +314,13 @@ background: linear-gradient(to top left, #60233C, #000000);
 .width4 {
   width: 79%;
 }
+
+
 .link-active {
-  font-weight: bold;
-}
+ 
+   
+    color: #f1c6e3;
+  }
 
 /**/
 
@@ -382,11 +385,11 @@ background: linear-gradient(to top left, #60233C, #000000);
 }
 
 #on-scroll {
-  transition: all .3s ease-out;
+  transition: all .7s ease-out;
 }
 .hide-sections {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(70px);
 
 }
 
@@ -580,7 +583,7 @@ background: linear-gradient(to top left, #60233C, #000000);
 background: -webkit-linear-gradient(bottom right, #60233C, #000000);
 background: -moz-linear-gradient(bottom right, #60233C, #000000);
 background: linear-gradient(to top left, #60233C, #000000);
-   padding: 82px 12px 34px 12px;
+   padding: 82px 33px 34px 33px;
     font-size: 16px;
     color: #f7f7f7;
 
@@ -675,19 +678,20 @@ background: linear-gradient(to top left, #60233C, #000000);
 
 
 .audio {
-     position: absolute;
-    top: 90%;
-    left: 50%;
+    position: fixed;
+    top: 24%;
+    left: 7%;
     transform: translateX(-50%);
-    width: 420px;
-    height: 42px;
+    width: 161px;
+    height: 22px;
     color: #F7EEEE;
     z-index: 100;
     display: flex;
     align-items: center;
     padding: 29px 23px 23px 23px;
-    background: white;
+    background: #F7EEEE;
     border-radius: 8px;
+
    
   .audio-box {
     margin: 0 auto;

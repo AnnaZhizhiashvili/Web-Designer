@@ -1,5 +1,7 @@
 const sections = [...document.querySelectorAll('section')];
 const links = [...document.querySelectorAll(".navigation a")];
+const linkLis = [...document.querySelectorAll(".navigation a li")];
+
 const header = document.querySelector('header');
 const home = document.querySelector('#home');
 let sectionOptions = {
@@ -26,14 +28,16 @@ const sectionObserver = new IntersectionObserver(function(entries) {
 		 entries.forEach(entry => {
 	 	 let sectionHref = `#${entry.target.getAttribute('id')}`;
 	 	 let link = links.find(l => l.getAttribute('href') === sectionHref);
-	 	
+	 	const element = link.querySelector("li");
 	 	if (entry.isIntersecting) {
 			// entry.target.classList.add("active");
-			link.classList.add("link-active");
+			
+			element.classList.add("link-active");
+			console.log(element);
 			
 		} else {
 			// entry.target.classList.remove("active");
-			link.classList.remove("link-active");
+			element.classList.remove("link-active");
 		};
 	})
 }, sectionOptions
