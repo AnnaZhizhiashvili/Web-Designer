@@ -3,7 +3,7 @@ const links = [...document.querySelectorAll(".navigation a")];
 const header = document.querySelector('header');
 const home = document.querySelector('#home');
 let sectionOptions = {
-	threshold: 0.7
+	threshold: .75
 };
 
 let headerOptions = {};
@@ -13,11 +13,8 @@ const headerObserver = new IntersectionObserver(function(entries) {
 		console.log(entry);
 		if (!entry.isIntersecting) {
 			header.classList.add("header-scroll");
-			console.log("shevedi");
-			
 		} else {
 			header.classList.remove("header-scroll");
-			console.log("else");
 		}
 	}), headerOptions
 });
@@ -38,9 +35,6 @@ const sectionObserver = new IntersectionObserver(function(entries) {
 			// entry.target.classList.remove("active");
 			link.classList.remove("link-active");
 		};
-
-	
-
 	})
 }, sectionOptions
 );
@@ -91,24 +85,35 @@ const skillsObserver = new IntersectionObserver(function(entries) {
 widths.forEach(w => skillsObserver.observe(w)
  );
 
-//resume section, skewing boxes 
 
-const skewedObject1 = document.querySelectorAll("#swing");
-const skewedObject2 = document.querySelector("#swinging");
-const skewedObjects = [...skewedObject1, skewedObject2]
+// smooth unhiding
 
-skewedOptions = {
-	threshold: .6
-}
-const skewObserver = new IntersectionObserver(function(entries){
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add("swing");
-		}
-	}
-)}, skewedOptions);
+const scrolledSections = document.querySelectorAll("#on-scroll");
+let firstProperties = {
+	threshold: .5
+};
 
-skewedObjects.forEach(object => skewObserver.observe(object));
+scrolledSections.forEach(sec => {sec.classList.add("hide-sections");
+
+});
+
+const firstObserver =  new IntersectionObserver(function(entries) {
+	entries.forEach(entry => {
+		if (!entry.isIntersecting) return;
+		entry.target.classList.remove("hide-sections");
+		// firstObserver.unobserve(entry.target);
+	});
+}, firstProperties)
+
+
+
+scrolledSections.forEach(sec => {
+	firstObserver.observe(sec);
+});
+
+
+
+
 //Porfolio, shuffling elements
 
 
@@ -123,29 +128,39 @@ $("#filters").on("click", "button", function() {
   $grid.isotope({ filter: filterValue });
 });
 
-// observe for rotating, blog sections, and 
-
-
-const fadeObject1 = document.querySelectorAll(".blog__container");
-const fadeObject2 = document.querySelector(".blog__main h2");
-const blogScroll = document.querySelector(".blog-scroll");
-
-let fadeOptions = {};
-
-const fadeObserver = new IntersectionObserver(function(entries){
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-
-					fadeObject1.forEach(object => object.classList.add("scroll-blog"));
-					fadeObject2.classList.add("scroll-blog-text");
-
-		}
-	}
-)}, fadeOptions);
-
-fadeObserver.observe(blogScroll);
 
 
 
 
-				
+//nav-bar
+
+const hamburger = document.querySelector(".nav-hamburger");
+const navigation = document.querySelector(".navigation");
+const canvas = document.querySelector("#particles-js");
+
+hamburger.addEventListener("click", () => {
+	hamburger.classList.toggle("open");
+	navigation.classList.toggle("nav-open");
+	canvas.classList.toggle("canvas");
+
+});
+
+links.forEach(link => link.addEventListener("click", ()=> {
+	hamburger.classList.toggle("open");
+	navigation.classList.toggle("nav-open");
+	canvas.classList.toggle("canvas");
+
+}));
+
+
+// scrolling text
+
+// const scrollingText = document.querySelector(".name");
+
+
+// document.addEventListener('scroll', function(e) {
+// 	let windowsY = window.scrollY;
+// 	scrollingText.style.top = `${434 - 20}px`;
+// 	// console.log(windowsY);
+// 	console.log(scrollingText.getBoundingClientRect().top);
+// })			

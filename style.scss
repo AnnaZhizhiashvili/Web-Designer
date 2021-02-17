@@ -13,9 +13,10 @@ body {
   line-height: 1.5;
   height: 100%;
   color: white;
-  font-weight: 100;
+  font-weight: 300;
   position: relative;
-
+  overflow-x: hidden;
+   font-family: 'Heebo', sans-serif;
 }
 
 canvas {
@@ -32,6 +33,7 @@ canvas {
   background: url(img/darknight.jpg);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
  /* z-index: -10;*/
 
 }
@@ -74,8 +76,12 @@ a, a:visited, a:hover {
 
   &__logo {
     width: 60px;
+    height: 65px;
     background: white;
     opacity: .7;
+    img {
+      height: 100%;
+    }
   }
   .navigation {
       display: flex;
@@ -84,11 +90,34 @@ a, a:visited, a:hover {
       list-style-type: none;
       margin-right: 13px;
       font-size: 19px;
+      position: relative;
+      transition: all .4s ease;
+
+      &::after {
+           content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            width: 100%;
+            height: 1px;
+
+      }
+
+      &:hover {
+          opacity: .7
+      }
+
+       &:hover::after {
+         animation: forPseudo .2s ease;
+         animation-fill-mode: forwards;
+       }
+
   
     } 
      a {
       
-      transition: all .5s ease;
+      transition: all .3s ease;
      }
   }
 }
@@ -99,52 +128,101 @@ a, a:visited, a:hover {
 
 /*hamburger menu*/
 .nav-hamburger {
-    width: 50px;
+   width: 50px;
    height: 27px;
    flex-direction: column;
    display: flex;
    justify-content: space-between;
+   display: none;
 
           span {
           width: 30px;
-          margin-bottom: 4px;
+         
           height: 3px;
           background-color: white;
           display: inline-block;
-          position: relative;
+          transform-origin: -2px 2px;
+          transition: all .3s ease-in-out;
 
+              &:not(:last-child){
+                 margin-bottom: 4px;
+              }
+          }
+          &.open {
 
+            > span:first-child{
+              transform: rotate(45deg);
+              background-color: red;
+            }
+            > span:nth-child(2) {
+              opacity: 0;
+            }
 
+            > span:last-child {
+              transform: rotate(-45deg);
+              background-color: red;
+            }
+          }
+}
+
+@media only screen and (max-width: 992px) {
+
+  .canvas {
+      background : rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .header {
+    
+         .nav-hamburger {
+          display: flex;
+          align-self: flex-start;
+      }
+
+  .navigation {
+    background: black;
+    width: 341px;
+    height: 432px;
+    position: absolute;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 58px;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-200%);
+
+    opacity: 0;
+
+    transition: all .5s ease-out;
+
+    & ul {
+      flex-direction: column;
+      opacity: 0.9;
+          
+           & li {
+          margin-right: 0;
+          font-size: 25px;
+
+            &:not(:last-child){
+              margin-bottom: 15px;
+              font-stretch: 40px;
+            }
+        }
+      }
+
+      &.nav-open {
+    transform: translateX(-50%);
+    opacity: 1;
+    }
   }
 }
-.third {
-   transform: rotate(45deg);
-  top: -3px;
-  left: 8px;
-    transform-origin: left center;
 }
-.second {
-  visibility: hidden;
-}
-
-.first {
-    transform: rotate(-45deg);
-    transform-origin: left center;
-    top: 39px;
-    left: 8px;
-}
-
- 
-
-
-
-
 
 .home {
     height: 100%;
     width: 100%;
     .name {
         position: absolute;
+        font-family: 'Bad Script', cursive;
         bottom: 7%;
         left: 50%;
         transform: translate(-50%, -55%);
@@ -158,7 +236,10 @@ a, a:visited, a:hover {
 
 .about {
     text-align: center;
-    background-color: grey;
+   background: #72334D;
+background: -webkit-linear-gradient(bottom right, #72334D, #27132C);
+background: -moz-linear-gradient(bottom right, #72334D, #27132C);
+background: linear-gradient(to top left, #72334D, #27132C);
     padding: 90px 225px;
 
     &__container {
@@ -208,7 +289,7 @@ a, a:visited, a:hover {
         transition: all .5s ease;
         height: 28%;
         margin-top: 12px;
-        background: black;
+        background: #FAEAEA;
         width: 10%;
         border-radius: 10%;
        
@@ -236,12 +317,12 @@ a, a:visited, a:hover {
 
 /**/
 
-/*resume section*/
+/*resume and blog sections/ sections that fade in*/
 
 .resume {
-  background-color: lightgrey;
+  color: #411E2C;
   position: relative;
-/*  height: 70%;*/
+
 
 
 
@@ -252,13 +333,14 @@ a, a:visited, a:hover {
   }
 
   &__containers {
-         transform: perspective(100000px);
+        transform: perspective(100000px);
         margin-top: 20px;
 
      
       div {
      /*   background-color: pink;*/
         padding: 30px;
+      
 
       }
       div:not(:last-child) {
@@ -271,23 +353,41 @@ a, a:visited, a:hover {
 
 }
 
-.swing {
-   animation: skew 1s ease-out;
-   
+
+.blog {
+    text-align: center;
+    color: black;
+    padding: 90px 225px;
+      &__main {
+        flex-direction: column;
+      }
+      h2 {
+        margin-bottom: 40px;
+        opacity: 0;
+
+      }
+      &__container {
+        margin-right: 40px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border-radius: 10px;
+        padding: 60px;
+        position: relative;
+
+       
+      }
 }
 
-   
-@keyframes skew {
-    from {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-  
+#on-scroll {
+  transition: all .3s ease-out;
 }
+.hide-sections {
+    opacity: 0;
+    transform: translateY(80px);
+
+}
+
+
+
 
 
 #swing {
@@ -350,36 +450,45 @@ a, a:visited, a:hover {
 /* portfolio */
 
 .portfolio {
-  background-color: pink;
+  background: #72334D;
+  background: -webkit-linear-gradient(bottom right, #72334D, #27132C);
+  background: -moz-linear-gradient(bottom right, #72334D, #27132C);
+  background: linear-gradient(to top left, #72334D, #27132C);
   padding: 80px;
 
 }
+
 
 #filters {
   text-align: center;
   padding: 20px;
     .filter-button {
-    font-size: 16px;
+      font-size: 16px;
     text-decoration: none;
     color: #666;
-    background-color: black;
-    border: none;
+    background-color: transparent;
+    color: white;
     margin: 10px;
-    padding: 5px 10px;
+    border: 5px solid #fff;
+    padding: 7px 12px;
+    transition: all .4s ease;
     &:hover {
-      color: white;
+      background: #fff;
+      color: #72334D;
+      cursor: pointer;
     }
   }
 }
 
 #grid {
-    width: 88%;
+    max-width: 63%;
+    min-height: 582px;
     margin: 0 auto;
   img {
     width: 200px;
-    height: 160px;
     display: inline-block;
-    margin: 15px;
+    margin: 22px;
+    cursor: pointer;
 
     &.type1 {
       background-color: #85fd2b;
@@ -393,37 +502,8 @@ a, a:visited, a:hover {
   }
 }
 
-/*blog*/
 
-.blog {
-    text-align: center;
-    color: black;
-    padding: 90px 225px;
-      &__main {
-        flex-direction: column;
-      }
-      h2 {
-        margin-bottom: 40px;
-      }
-      &__container {
-        margin-right: 40px;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-        border-radius: 10px;
-        padding: 60px;
-        position: relative;
-      }
-
-    }
-
-/* on scroll*/
-.scroll-blog {
-  animation: fadeIn 1s ease-out;
-}
-
-.scroll-blog-text {
-  animation: opacity 5s ease;
-}
-/**/
+/*blog section*/
 
 .blog__container::before {
   content: "";
@@ -431,17 +511,24 @@ a, a:visited, a:hover {
   left: 0;
   top: 0;
   width: 100%;
-
   z-index: -10;
   opacity: .8;
-  background-color: pink;
-  transition: all 1s;
+  background-color: #72334D;
+  transition: all 1s ease;
+ 
 
 }
-
+.blog__container {
+  transition: all 1s ease;
+}
+.blog__container:hover {
+   cursor: pointer;
+   color: #FAEAEA;
+}
 .blog__container:hover::before {
     animation: increasing .5s ease-out;
     animation-fill-mode: forwards;
+
 }
 
 @keyframes increasing {
@@ -486,11 +573,66 @@ a, a:visited, a:hover {
 .footer {
 
     background-color: #333;
-    padding: 37px 18px;
+   padding: 117px 12px 34px 12px;
     font-size: 16px;
     color: #f7f7f7;
 
       &__box {
+        height: 100%;
+
+        .social-box {
+          font-size: 30px;
+          margin-bottom: 26px;
+        /*    margin-left: 29px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+          a {
+            position: relative;
+            transition: all .3s;
+
+          
+            &:hover {
+            opacity: .6;
+            }
+
+            &:not(:last-child){
+              margin-right: 40px;
+            }
+
+             &::after {
+            content: "";
+            width: 51px;
+            height: 51px;
+            position: absolute;
+            left: -43%;
+            top: -10%;
+            border: 1px solid white;
+            border-radius: 50%;
+      
+
+
+            }
+
+          }
+          .facebook::after {
+           content: "";
+            width: 51px;
+            height: 51px;
+            position: absolute;
+            left: -88%;
+            top: -6%;
+            border: 1px solid white;
+            border-radius: 50%;
+
+
+
+          }
+
+
+         
+        }
         &1 {
             border-top: 1px solid #777;
             padding-top: 8px;
@@ -500,16 +642,69 @@ a, a:visited, a:hover {
         & ul li {
           margin-right: 14px;
           list-style-type: none;
-          transition: all .2s ease;
+          transition: all .3s ease;
+          position: relative;
+
+          &::after {
+
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            width: 100%;
+            height: 1px;
+           /* transition: all .3s ease-out;*/
+          }
 
           &:hover {
-            color: pink;
-          
-            transform: rotate(5deg) scale(1.3);
+            opacity: .6;
           }
+        
+          
+          &:hover::after {
+            animation: forPseudo .2s ease;
+            animation-fill-mode: forwards;
+          }
+
         }
+        
+     }
+
+     .copyright {
+      display: flex;
+      align-items: flex-end;
+     }
+}
+
+@keyframes forPseudo{
+  from {
+    width: 100%;
+   
+  }
+  to {
+    width: 0%;
+
+  }
+}
 
 
-      
-      }
+.audio {
+     position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 42px;
+    color: #F7EEEE;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 29px 23px 23px 23px;
+    background: white;
+    border-radius: 8px;
+   
+  .audio-box {
+    margin: 0 auto;
+  }
 }
