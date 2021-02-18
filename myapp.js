@@ -34,7 +34,6 @@ document.addEventListener('scroll', function(e) {
 });
 
 window.addEventListener('load', function(e) {
-	console.log("load");
 	if (window.pageYOffset > 200) {
 			header.classList.add("header-scroll");
 	}	else {
@@ -55,12 +54,13 @@ const sectionObserver = new IntersectionObserver(function(entries) {
 	 	if (entry.isIntersecting) {
 			// entry.target.classList.add("active");
 			
-			element.classList.add("link-active");
+			element.style.fontWeight="bold";
+
 			
 			
 		} else {
 			// entry.target.classList.remove("active");
-			element.classList.remove("link-active");
+			element.style.fontWeight= "300";
 		};
 	})
 }, sectionOptions
@@ -145,7 +145,7 @@ scrolledSections.forEach(sec => {
 
 
 var $grid = $("#grid").isotope({
-  itemSelector: "img",
+  itemSelector: ".grid-item",
   layoutMode: "fitRows"
 });
 
@@ -180,23 +180,3 @@ links.forEach(link => link.addEventListener("click", ()=> {
 }));
 
 
-//observe audio
-const portfolio = document.querySelector('.portfolio');
-const audio = document.querySelector('.audio');
-let porfolioOptions = {
-	threshold: .1
-}
-
-const portfolioObserver = new IntersectionObserver(function(entries) {
-		 entries.forEach(entry => {
-	 	if (entry.isIntersecting) {
-			audio.classList.add("audioPosition");
-			
-		} else {
-			 audio.classList.remove("audioPosition");
-		};
-	})
-}, porfolioOptions
-);
-
-portfolioObserver.observe(portfolio);
