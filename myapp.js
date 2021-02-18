@@ -180,3 +180,13 @@ links.forEach(link => link.addEventListener("click", ()=> {
 }));
 
 
+// scroll text
+// const name = document.querySelector(".name")
+// document.addEventListener('scroll', function(e) {
+// 	if (window.pageYOffset > 200) {
+// 			const rect = name.getBoundingClientRect();
+// 			console.log(rect.y);
+// 			name.style.top = `${rect.y -1}px`
+// 		}
+		
+// });
