@@ -196,10 +196,14 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
 
         .img-box {
           margin-right: 27px;
+          align-self: center;
 
         }
          .text-box {
           text-align: start;
+          display: flex;
+          align-items: center;
+        /*  padding: 23px;*/
          }
 
       }
@@ -208,6 +212,7 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
         .skills-box {
           flex-wrap: wrap;
           margin-top: 70px;
+          justify-content: space-around;
 
             div {
               flex-basis: 45%;
@@ -737,11 +742,19 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
   .blog__container {
     padding: 40px;
   }
+  .resume__main, .blog, .about {
+      padding: 84px 89px;
+  }
 }
 
       
 @media only screen and (max-width: 992px) {
-
+  .footer__box {
+     padding: 64px 21px 21px 21px;
+}
+  .about, .resume, .portfolio, .blog {
+     padding-top: 0; 
+}
   .canvas {
       background : rgba(0, 0, 0, 0.6) !important;
   }
@@ -754,11 +767,11 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
       }
 
   .navigation {
-    background: black;
+    background: rgba(0,0,0, 0.9);
     width: 341px;
     height: 432px;
     position: absolute;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 58px;
     top: 80%;
@@ -776,11 +789,9 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
            & li {
           margin-right: 0;
           font-size: 25px;
+          margin-bottom: 12px;
 
-            &:not(:last-child){
-              margin-bottom: 15px;
-              font-stretch: 40px;
-            }
+          
         }
       }
 
@@ -790,4 +801,106 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
     }
   }
 }
+
+    .resume__main, .about, .blog {
+          padding: 84px 35px;
+    }
+    #swing {
+      padding: 19px;
+    }
+    .blog__container {
+    padding: 25px;
+    }
+    #grid {
+     min-height: 500px;
+  
+    }
+}
+
+@media only screen and (max-width: 768px) {
+      .text-box {
+        font-size: 13px;
+      }
+       .blog {
+          padding: 84px 20px;
+      }
+      #swing {
+        padding: 15px;
+      }
+      #grid {
+          min-height: 389px;
+      }
+      .blog__container:not(:last-child) {
+          margin-right: 15px;
+      }
+      .about h2 {
+        font-size: 20px;
+      }
+      .about {
+    padding: 54px 20px;
+      }
+
+  /*  .resume__main {
+    padding: 84px 89px;
+}*/
+
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .home .name h1 {
+        font-size: 31px;
+      
+    }
+    .about .skills-box div div span:nth-child(2) {
+    margin-right: -9px;
+    }
+    .about .skills-box {
+      margin-top: 50px;
+      font-size: 10px;
+    }
+
+    .resume__main, .about, .blog {
+    padding: 84px 4px;
+}
+
+    .resume__main, .blog__main {
+    
+    font-size: 14px;
+
+    }
+    .audio {
+      position: absolute;
+    }
+      .about {
+        padding: 42px 4px;
+    }
+    .about h2 {
+    font-size: 13px;
+    }
+    #filters .filter-button {
+    font-size: 14px;
+  }
+      #grid {
+        min-height: 269px;
+    }   
+    #grid img {
+    padding: 9px;
+    }
+
+    .blog__container {
+    padding: 20px;
+}   
+    .footer {
+      font-size: 10px;
+    }
+
+    .footer__box {
+    padding: 30px 14px 17px 14px;
+}     
+    
+    .copyright {
+      text-align: end;
+    }
+
 }
