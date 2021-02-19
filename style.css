@@ -532,7 +532,7 @@ img {
 
   .header .nav-hamburger {
     display: flex;
-    align-self: flex-start; }
+    align-self: center; }
   .header .navigation {
     background: rgba(0, 0, 0, 0.9);
     width: 341px;
@@ -611,7 +611,8 @@ img {
     font-size: 14px; }
 
   .audio {
-    position: absolute; }
+    position: absolute;
+    left: 16%; }
 
   .about {
     padding: 42px 4px; }

@@ -763,7 +763,7 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
      
          .nav-hamburger {
           display: flex;
-          align-self: flex-start;
+          align-self: center;
       }
 
   .navigation {
@@ -871,6 +871,7 @@ background: linear-gradient(to top right, #FFFFFF, #B8B6B4);
     }
     .audio {
       position: absolute;
+          left: 16%;
     }
       .about {
         padding: 42px 4px;
