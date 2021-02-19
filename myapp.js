@@ -156,9 +156,6 @@ $("#filters").on("click", "button", function() {
 });
 
 
-
-
-
 //nav-bar
 
 const hamburger = document.querySelector(".nav-hamburger");
