@@ -1,6 +1,6 @@
 const sections = [...document.querySelectorAll('section')];
 const links = [...document.querySelectorAll(".navigation a")];
-const linkLis = [...document.querySelectorAll(".navigation a li")];
+const linkLis = [...document.querySelectorAll(".navigation li")];
 
 const header = document.querySelector('header');
 const home = document.querySelector('#home');
@@ -8,22 +8,25 @@ let sectionOptions = {
 	threshold: .75
 };
 
-// let headerOptions = {
-// 	rootMargin: "0px 0px -1000px 0px",
 
-// };
+const sectionObserver = new IntersectionObserver(function(entries) {
+		 entries.forEach(entry => {
+	 	 let sectionHref = `#${entry.target.getAttribute('id')}`;
+	 	 let link = links.find(l => l.getAttribute('href') === sectionHref);
+	 	const element = link.querySelector("li");
+	 	if (entry.isIntersecting) {
+			
+			element.style.fontWeight="bold";
 
-// const headerObserver = new IntersectionObserver(function(entries) {
-// 	entries.forEach(entry => {
-// 		console.log(entry);
-// 		if (!entry.isIntersecting) {
-// 			header.classList.add("header-scroll");
-// 		} else {
-// 			header.classList.remove("header-scroll");
-// 		}
-// 	}), headerOptions
-// });
-// headerObserver.observe(home);
+			
+			
+		} else {
+			element.style.fontWeight= "300";
+		};
+	})
+}, sectionOptions
+);
+
 
 document.addEventListener('scroll', function(e) {
 	if (window.pageYOffset > 200) {
@@ -40,31 +43,11 @@ window.addEventListener('load', function(e) {
 		header.classList.remove("header-scroll");
 	}
 
- 	
-
-  });
+ });
 
 
 
-const sectionObserver = new IntersectionObserver(function(entries) {
-		 entries.forEach(entry => {
-	 	 let sectionHref = `#${entry.target.getAttribute('id')}`;
-	 	 let link = links.find(l => l.getAttribute('href') === sectionHref);
-	 	const element = link.querySelector("li");
-	 	if (entry.isIntersecting) {
-			// entry.target.classList.add("active");
-			
-			element.style.fontWeight="bold";
 
-			
-			
-		} else {
-			// entry.target.classList.remove("active");
-			element.style.fontWeight= "300";
-		};
-	})
-}, sectionOptions
-);
 
 sections.forEach(section => sectionObserver.observe(section)
  );
@@ -128,7 +111,6 @@ const firstObserver =  new IntersectionObserver(function(entries) {
 	entries.forEach(entry => {
 		if (!entry.isIntersecting) return;
 		entry.target.classList.remove("hide-sections");
-		// firstObserver.unobserve(entry.target);
 	});
 }, firstProperties)
 
@@ -177,16 +159,9 @@ links.forEach(link => link.addEventListener("click", ()=> {
 }));
 
 
-// scroll text
-// const name = document.querySelector(".name")
-// document.addEventListener('scroll', function(e) {
-// 	if (window.pageYOffset > 200) {
-// 			const rect = name.getBoundingClientRect();
-// 			console.log(rect.y);
-// 			name.style.top = `${rect.y -1}px`
-// 		}
-		
-// });
+
+
+
 
 
 
